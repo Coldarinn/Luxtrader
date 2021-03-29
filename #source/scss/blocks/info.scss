@@ -1,0 +1,113 @@
+.info {
+	padding: 0 0 55px 0;
+	&__body {
+		display: flex;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+	&__column {
+		flex-basis: 50%;
+		@media (max-width: 500px) {
+			flex-basis: 100%;
+		}
+	}
+}
+.info-news {
+	&__title {
+		color: #000000;
+		font-family: "pfdm";
+		font-size: 35px;
+		text-transform: uppercase;
+		letter-spacing: 3.5px;
+		margin-bottom: 35px;
+		position: relative;
+		padding-left: 39px;
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 17px;
+			height: 25px;
+			background:url('../../../images/info/1.png') no-repeat center;
+			padding: 1px;
+			border: 1px solid #bb9c66;
+		}
+		@media (max-width: 690px) {
+			font-size: 30px;
+			margin-bottom: 20px;
+		}
+	}
+	&__item {
+		max-width: 412px;
+	}
+}
+.news-item {
+	&__date {
+		color: #bb9c66;
+		font-family: "PT Sans";
+		font-size: 12px;
+	}
+	&__text {
+		color: #333333;
+		font-family: "PT Sans";
+		font-weight: 400;
+		margin-bottom: 30px;
+		@media (max-width: 690px) {
+			font-size: 13px;
+			margin-bottom: 15px;
+		}
+		span {
+			font-weight: 700;
+			text-decoration: underline;
+		}
+	}
+}
+.info-events {
+	padding-left: 15px;
+	@media (max-width: 500px) {
+		padding-left: 0;
+	}
+	&__title {
+		color: #000000;
+		font-family: "pfdm";
+		font-size: 35px;
+		text-transform: uppercase;
+		letter-spacing: 3.5px;
+		margin-bottom: 35px;
+		position: relative;
+		padding-left: 39px;
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 21px;
+			height: 25px;
+			background:url('../../../images/info/2.png') no-repeat center;
+		}
+		@media (max-width: 690px) {
+			font-size: 30px;
+			margin-bottom: 20px;
+		}
+	}
+}
+.events-item {
+	max-width: 405px;
+	&__text {
+		color: #333333;
+		font-family: "PT Sans";
+		font-weight: 400;
+		margin-bottom: 30px;
+		@media (max-width: 690px) {
+			font-size: 13px;
+			margin-bottom: 15px;
+		}
+		span {
+			font-weight: 700;
+			text-decoration: underline;
+		}
+	}
+}

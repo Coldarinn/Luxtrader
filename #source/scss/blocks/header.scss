@@ -1,0 +1,246 @@
+.header {
+	background-color: #1c242a;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+	.container {
+		position: relative;
+	}
+	&__body {
+		display: flex;
+		align-items: center;
+		height: 75px;
+		@media (max-width: 768px) {
+			justify-content: space-between;
+		}
+	}
+	&__logo {
+		position: relative;
+		z-index: 3;
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: 768px) {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	&__burger {
+		display: none;
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 3;
+		@media (max-width: 768px) {
+			display: block;
+			vertical-align: middle;
+		}
+		span {
+			top: 8px;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #fff;
+			transition: .5s ease;
+			&:first-child {
+				top: 0;
+			}
+			&:last-child {
+				top: auto;
+				bottom: 0;
+			}
+		}
+		&.active {
+			span {
+				&:first-child {
+					transform: rotate(-45deg);
+					top: 8px;
+				}
+				&:nth-child(2) {
+					display: none;
+				}
+				&:last-child {
+					transform: rotate(45deg);
+					bottom: 8px;
+				}
+			}
+
+		}
+	}
+}
+
+.menu-header {
+	flex: 1 1 auto;
+	padding: 0px 0 0 30px/950px * 100%;
+	@media (max-width: 768px) {
+		flex: 0 0 auto;
+		padding: 0;
+	}
+	&__menu {
+		@media (max-width: 768px) {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			top: 75px;
+			left: -100%;
+			transition: .5s ease;
+			background-color: rgba(28, 36, 42, .8);
+		}
+		&.active {
+			left: 0;
+			&:after {
+				left: 0;
+			}
+		}
+	}
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media (max-width: 768px) {
+			display: block;
+			text-align: center;
+			padding: 50px 10px 0 10px;
+		}
+		li {
+			margin: 0 15px;
+			@media (max-width: 890px) {
+				margin: 0 10px;
+			}
+			@media (max-width: 768px) {
+				margin: 0 0 10px 0px;
+			}
+		}
+	}
+	&__link {
+		color: #ffffff;
+		font-family: "pfd";
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 1.4px;
+		transition: .2s linear;
+		&:hover {
+			color: #c0a36d;
+		}
+		@media (max-width: 768px) {
+			color: #fff;
+			font-size: 20px;
+			letter-spacing: 3px;
+		}
+		&.active {
+			color: #c0a36d;
+		}
+	}
+}
+
+.usermenu-header {
+	display: flex;
+	align-items: center;
+	&__region {
+		@extend .menu-header__link;
+		background:url('../../../images/header/earth.png') left no-repeat;
+		padding: 0 0 0 30px;
+		min-width: 18px;
+		min-height: 18px;
+		@media (max-width: 890px) {
+			padding: 0;
+			margin: 0;
+			span {
+				display: none;
+			}
+		}
+		@media (max-width: 510px) {
+			display: none;
+		}
+	}
+}
+
+.user-header {
+	&__icon {
+		display: flex;
+		margin: 0 0 0 20px;
+		cursor: pointer;
+		padding: 0 15px 0 0;
+		position: relative;
+		&._active {
+			img {
+				transform: scale(1.1);
+			}
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			right: 0;
+			bottom: 45%;
+			background:url('../../../images/header/arrow-up.png') no-repeat center;
+			width: 8px;
+			height: 8px;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 45%;
+			background:url('../../../images/header/arrow-down.png') no-repeat center;
+			width: 8px;
+			height: 8px;
+		}
+		@media (max-width: 890px) {
+			margin: 0 0 0 10px;
+		}
+	}
+	&__menu {
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		top: 78px;
+		right: 0;
+		padding: 20px;
+		background-color: #1c242a;
+		transition: opacity .3s ease;
+		li {
+			margin: 0 0 8px 0;
+			color: #fff;
+			&:last-child {
+				margin: 0;
+			}
+		}
+		&._active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+	&__link {
+		color: #fff;
+		padding: 0 0 0 30px;
+		display: inline-block;
+		font-family: "pfd";
+		font-size: 14px;
+		text-transform: uppercase;
+		letter-spacing: 1.4px;
+		transition: .2s linear;
+		&:hover {
+			color: #c0a36d;
+		}
+		&--1 {
+			background:url('../../../images/header/earth.png') 1px center no-repeat;
+		}
+		&--2 {
+			background:url('../../../images/header/key.png') left center no-repeat;
+		}
+		&--3 {
+			background:url('../../../images/header/palm.png') 4px center no-repeat;
+		}
+		&--4 {
+			background:url('../../../images/header/hammer.png') left center no-repeat;
+		}
+	}
+}

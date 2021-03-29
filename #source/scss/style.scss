@@ -1,0 +1,303 @@
+//==========ПОДКЛЮЧЕНИЕ ШРИФТОВ==========//
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|PT+Sans:400,700&display=swap&subset=cyrillic');
+
+@font-face {
+	font-family: 'pfdm';
+	src: url('../../../../fonts/pfdintextcondpro-medium.eot');
+	src: local('☺'), url('../../../../fonts/pfdintextcondpro-medium.woff') format('woff'), url('../../../../fonts/pfdintextcondpro-medium.ttf') format('truetype'), url('../../../../fonts/pfdintextcondpro-medium.svg') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'pfd';
+	src: url('../../../../fonts/pfdintextcondpro-regular.eot');
+	src: local('☺'), url('../../../../fonts/pfdintextcondpro-regular.woff') format('woff'), url('../../../../fonts/pfdintextcondpro-regular.ttf') format('truetype'), url('../../../../fonts/pfdintextcondpro-regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'BravoRG';
+	src: url('../../fonts/BravoRG Regular.eot');
+	src: local('☺'), url('../../fonts/BravoRG Regular.woff') format('woff'), url('../../fonts/BravoRG Regular.ttf') format('truetype'), url('../../fonts/BravoRG Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ceremonious';
+	src: url('../../fonts/ceremonious_one.eot');
+	src: local('☺'), url('../../fonts/ceremonious_one.woff') format('woff'), url('../../fonts/ceremonious_one.ttf') format('truetype'), url('../../fonts/ceremonious_one.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Harbell';
+	src: url('../../fonts/Harbell_Personal_Use.eot');
+	src: local('☺'), url('../../fonts/Harbell_Personal_Use.woff') format('woff'), url('../../fonts/Harbell_Personal_Use.ttf') format('truetype'), url('../../fonts/Harbell_Personal_Use.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Idealist';
+	src: url('../../fonts/Idealist Sans Regular.eot');
+	src: local('☺'), url('../../fonts/Idealist Sans Regular.woff') format('woff'), url('../../fonts/Idealist Sans Regular.ttf') format('truetype'), url('../../fonts/Idealist Sans Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'rouble';
+	src: url('../../fonts/rouble.eot');
+	src: local('☺'), url('../../fonts/rouble.woff') format('woff'), url('../../fonts/rouble.ttf') format('truetype'), url('../../fonts/rouble.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+//==========/ПОДКЛЮЧЕНИЕ ШРИФТОВ==========//
+
+//==========ПЕРЕМЕННЫЕ==========//
+
+
+
+//==========/ПЕРЕМЕННЫЕ==========//
+
+//==========ОБНУЛЕНИЕ И ОБЩИЕ ПАРАМЕТРЫ==========//
+
+body {
+	font-family: 'PT Sans Narrow';
+	font-weight: 400;
+	font-size: 15px;
+	color: #333333;
+	&.lock {
+		overflow: hidden;
+	}
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+h1, h2, h3 h4, h5, h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.btn {
+	cursor: pointer;
+	position: relative;
+	text-transform: uppercase;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 100%;
+	border: 3px solid;
+	border-image: linear-gradient(to bottom, #c3a774, #8d642d) 1;
+	overflow: hidden;
+	margin: 0 auto;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 50%;
+		left: 0;
+		right: 0;
+		top: -50%;
+		background:linear-gradient(to bottom, #c3a774, #cbb385);
+		opacity: .3;
+		z-index: -1;
+		transition: .3s ease;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 50%;
+		left: 0;
+		right: 0;
+		bottom: -50%;
+		background: linear-gradient(to top, #8d642d, #cbb385);
+		opacity: .3;
+		z-index: -1;
+		transition: .3s ease;
+	}
+	&:hover.btn:after {
+		bottom: 0;
+	}
+	&:hover.btn:before {
+		top: 0;
+	}
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-track {
+    display: flex;
+    align-items: flex-start;
+}
+
+.section-head {
+	margin-bottom: 50px;
+}
+
+.title {
+	color: #bb9c66;
+	font-family: "ceremonious";
+	font-size: 40px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.subtitle {
+	color: #ffffff;
+	font-family: "pfd";
+	font-size: 35px;
+	text-transform: uppercase;
+	letter-spacing: 5.25px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.decor {
+	display: flex;
+	align-items: center;
+	&__items {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+		&:before {
+			content: '';
+			height: 1px;
+			flex: 1 1 100%;
+			background-color: #bb9c66;
+		}
+		&:after {
+			content: '';
+			height: 25px*.72;
+			width: 25px*.72;
+			flex: 0 0 25px*.72;
+			border: 1px solid #bb9c66;
+			transform: rotate(45deg);
+			margin: 0 0 0 5px;
+		}
+		span {
+			display: flex;
+			align-items: center;
+			margin: 0 5px;
+			&:before {
+				content: '';
+				height: 10px;
+				width: 10px;
+				flex: 0 0 10px;
+				border: 1px solid #bb9c66;
+				border-radius: 50%;
+			}
+			&:after {
+				content: '';
+				height: 15px*.72;
+				width: 15px*.72;
+				flex: 0 0 15px*.72;
+				border: 1px solid #bb9c66;
+				transform: rotate(45deg);
+				margin: 0 0 0 5px;
+			}
+		}
+		&:last-child {
+			flex-direction: row-reverse;
+			&:after {
+				margin: 0 5px 0 0;
+			}
+			span {
+				flex-direction: row-reverse;
+				margin: 0 5px 0 0;
+				&:after {
+					margin: 0 5px;
+				}
+			}
+		}
+	}
+	&__icon {
+		flex: 0 0 145px;
+		text-align: center;
+		img {
+			max-width: 70px;
+		}
+		@media (max-width: 700px) {
+			flex: 0 0 85px;
+		}
+	}
+}
+
+.more {
+	background-color: #1c242a;
+	padding: 60px 0 100px 0;
+}
+
+.intersting {
+	padding: 60px 0 70px 0;
+}
+
+//==========/ОБНУЛЕНИЕ И ОБЩИЕ ПАРАМЕТРЫ==========//
+
+//==========ОБОЛОЧКА==========//
+
+.wrapper {
+	max-width: 1000px;
+	width: 100%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+//==========ОБОЛОЧКА==========//
+
+//==========ОСНОВНАЯ СЕТКА==========//
+
+.container {
+	width: 100%;
+	max-width: 970px;
+	padding: 0 10px;
+	margin: 0 auto;
+ 	@media (max-width: 768px) {
+ 		max-width: none;
+ 	}
+}
+
+//==========/ОСНОВНАЯ СЕТКА==========//
+
+//========ПОДКЛЮЧЕНИЕ ФАЙЛОВ СО СТИЛЯМИ========//
+
+@import "blocks/header.scss";
+@import "blocks/intro.scss";
+@import "blocks/lots.scss";
+@import "blocks/categories.scss";
+@import "blocks/text.scss";
+@import "blocks/services.scss";
+@import "blocks/quote.scss";
+@import "blocks/info.scss";
+@import "blocks/subscription.scss";
+@import "blocks/footer.scss";
+
+//========/ПОДКЛЮЧЕНИЕ ФАЙЛОВ СО СТИЛЯМИ========//
